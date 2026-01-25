@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Licorice&display=swap');
+@import 'tailwindcss';
+
+@plugin "@iconify/tailwind4";
+
+@theme {
+  --color-dark-900: #0a0a0a;
+  --color-dark-800: #1a1a1a;
+  --color-dark-700: #2a2a2a;
+  --color-dark-600: #3a3a3a;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-neon-pink: #ff00ff;
+  --color-neon-blue: #00ffff;
+  --color-neon-purple: #9d00ff;
+  --color-react-white: #f6f7f9;
+  --color-react-blue: #252931;
+  --color-react-blue-dark: #22262e;
+  --color-react-blue-dark-content: #949eb0;
+  --color-react-blue-dark-content-2: #c0c5cf;
+  --color-react-blue-dark-sub-content: #5e697d;
+  --color-custom-yellow: #fce69e;
+  --color-custom-pink: #f8b8ca;
+}
+
+@layer base {
+  html {
+    font-size: calc(16px * var(--app-scale, 1));
+    transition: font-size 160ms ease;
+  }
+
+  body {
+    @apply min-h-screen p-6 font-sans bg-gradient-to-r from-custom-pink/35 to-custom-yellow/35 text-react-blue-dark;
+  }
+
+  .dark body {
+    @apply bg-react-blue text-react-blue-dark-content-2;
+    background-image: none;
+  }
+}
+
+@layer utilities {
+  button {
+    @apply flex-1 rounded-md text-xs py-2 my-1 disabled:opacity-50 outline outline-react-blue-dark hover:outline-custom-pink hover:bg-react-blue hover:text-custom-pink transition-all duration-300 cursor-pointer disabled:cursor-not-allowed;
+  }
+
+  .dark button {
+    @apply flex-1 rounded-md text-xs py-2 my-1 disabled:opacity-50 outline outline-custom-yellow hover:outline-custom-pink hover:bg-gradient-to-r from-custom-pink/75 to-custom-yellow/75 hover:text-react-blue-dark transition-all duration-300 cursor-pointer disabled:cursor-not-allowed;
+  }
+}
+
+@layer components {
+  .prettyLabel {
+    @apply md:text-5xl font-bold mt-4 bg-clip-text text-transparent bg-react-blue-dark;
+  }
+
+  .dark .prettyLabel {
+    @apply md:text-5xl font-bold mt-4 bg-clip-text text-transparent bg-gradient-to-r from-custom-yellow to-custom-pink;
+  }
+
+  .prettyBox {
+    @apply relative bg-react-white/70 rounded-xl border border-react-blue-dark hover:border-custom-pink hover:bg-react-blue focus-within:bg-react-blue focus-within:border-custom-pink transition-all duration-300 overflow-hidden text-react-blue hover:text-custom-pink focus-within:text-custom-pink min-h-[10rem];
+  }
+
+  .dark .prettyBox {
+    @apply relative bg-react-blue-dark rounded-xl border border-custom-yellow hover:border-custom-pink focus-within:border-custom-pink transition-all duration-300 overflow-hidden text-custom-yellow hover:text-react-blue-dark focus-within:text-react-blue-dark min-h-[10rem];
+  }
+
+  .prettyBox > .glow {
+    @apply absolute -inset-1 opacity-0 group-hover:opacity-50 group-focus-within:opacity-50 blur-md transition-opacity duration-300;
+  }
+
+  .dark .prettyBox > .glow {
+    @apply absolute -inset-1 bg-gradient-to-r from-custom-pink to-custom-yellow opacity-0 group-hover:opacity-50 group-focus-within:opacity-50 blur-md transition-opacity duration-300;
+  }
+
+  .prettyBox > textarea {
+    @apply absolute inset-0 w-full h-full bg-transparent p-4 resize-none focus:outline-none;
+    font-family: 'Licorice', cursive;
+  }
+
+  .logoIcon {
+    @apply bg-react-blue-dark;
+  }
+
+  .dark .logoIcon {
+    @apply bg-gradient-to-r from-custom-yellow to-custom-pink;
+  }
+
+  .spinningLogo {
+    @apply bg-gradient-to-r from-react-blue to-react-blue animate-spin [animation-duration:10s];
+  }
+
+  .dark .spinningLogo {
+    @apply bg-gradient-to-r from-custom-yellow to-custom-pink animate-spin [animation-duration:10s];
+  }
+
+  .settingsSection {
+    @apply rounded-xl border border-react-blue p-4;
+  }
+
+  .dark .settingsSection {
+    @apply rounded-xl border border-custom-yellow/30 p-4;
+  }
+
+  .dropDown {
+    @apply rounded-lg border border-react-blue bg-transparent p-2 text-sm text-react-blue focus:outline-none focus:border-custom-pink;
+    appearance: none;
+    background-image:
+      linear-gradient(45deg, transparent 50%, var(--color-react-blue) 50%),
+      linear-gradient(135deg, var(--color-react-blue) 50%, transparent 50%),
+      linear-gradient(
+        to right,
+        color-mix(in srgb, var(--color-react-blue-dark) 20%, transparent),
+        color-mix(in srgb, var(--color-react-blue-dark) 20%, transparent)
+      );
+    background-position:
+      calc(100% - 18px) calc(50% - 2px),
+      calc(100% - 13px) calc(50% - 2px),
+      calc(100% - 2.5rem) 50%;
+    background-size:
+      5px 5px,
+      5px 5px,
+      1px 60%;
+    background-repeat: no-repeat;
+    padding-right: 2.75rem;
+  }
+
+  .dark .dropDown {
+    @apply rounded-lg border border-custom-yellow/30 bg-transparent p-2 text-sm text-gray-200 focus:outline-none focus:border-custom-pink;
+    appearance: none;
+    background-image:
+      linear-gradient(45deg, transparent 50%, var(--color-custom-yellow) 50%),
+      linear-gradient(135deg, var(--color-custom-yellow) 50%, transparent 50%),
+      linear-gradient(
+        to right,
+        color-mix(in srgb, var(--color-custom-yellow) 25%, transparent),
+        color-mix(in srgb, var(--color-custom-yellow) 25%, transparent)
+      );
+    background-position:
+      calc(100% - 18px) calc(50% - 2px),
+      calc(100% - 13px) calc(50% - 2px),
+      calc(100% - 2.5rem) 50%;
+    background-size:
+      5px 5px,
+      5px 5px,
+      1px 60%;
+    background-repeat: no-repeat;
+    padding-right: 2.75rem;
+  }
+
+  .dropDown option {
+    background-color: var(--color-react-white);
+    color: var(--color-react-blue);
+  }
+
+  .dark .dropDown option {
+    background-color: var(--color-react-blue-dark);
+    color: var(--color-custom-yellow);
+  }
+}

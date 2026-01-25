@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Chrome Extension Vite React",
+  "author": {
+    "email": "youremail@email.com"
+  },
+  "version": "0",
+  "icons": {
+    "16": "./icon/16x16.png",
+    "32": "./icon/32x32.png",
+    "48": "./icon/48x48.png",
+    "128": "./icon/128x128.png"
+  },
+  "description": "A Chrome extension starter with side panel, popup, and options page",
+  "background": {
+    "type": "module",
+    "service_worker": "./service_worker.js"
+  },
+  "side_panel": {
+    "default_path": "src/sidePanel/index.html"
+  },
+  "options_page": "src/options/index.html",
+  "action": {
+    "default_popup": "src/popup/index.html",
+    "default_title": "Open Side Panel",
+    "default_icon": {
+      "16": "./icon/16x16.png",
+      "32": "./icon/32x32.png"
+    }
+  },
+  "permissions": ["sidePanel", "storage", "windows"],
+  "host_permissions": ["<all_urls>"]
+}
