@@ -33,8 +33,8 @@ A lightweight starter for building a Chrome Extension (Manifest V3) with side pa
 
 The architecture is based on an actively maintained production extension and reflects real-world usage.
 
-<img src=".github/screenshots/light-preview.png" alt="Light UI Preview" width="49%"/>
-<img src=".github/screenshots/dark-preview.png" alt="Dark UI Preview" width="49%"/>
+<img src=".github/screenshots/light-preview.png" alt="Light UI Preview" width="48%"/>
+<img src=".github/screenshots/dark-preview.png" alt="Dark UI Preview" width="48%"/>
 
 ## ✨ Features
 - Quick start with full functionality
