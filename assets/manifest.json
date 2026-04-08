@@ -32,8 +32,5 @@
     "sidePanel",
     "storage",
     "windows"
-  ],
-  "host_permissions": [
-    "<all_urls>"
   ]
 }
